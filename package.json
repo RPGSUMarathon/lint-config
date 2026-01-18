@@ -1,15 +1,20 @@
 {
   "name": "@rpgsu/lint-config",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Lint configs for RPGSU's projects",
+  "files": [
+    "configs"
+  ],
+  "exports": {
+    "./prettier": "./configs/prettier.js"
+  },
   "keywords": [
     "rpgsu",
     "lint",
     "lint-config",
     "config"
   ],
-  "author": "RPGSU",
+  "author": "RPGSUMarathon",
   "contributors": [
     "hoXyy"
   ],
