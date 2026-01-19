@@ -1,12 +1,13 @@
 import eslintJs from "@eslint/js";
-import perfectionist from "eslint-plugin-perfectionist";
 import prettierConfig from "eslint-config-prettier";
+import perfectionist from "eslint-plugin-perfectionist";
 import prettier from "eslint-plugin-prettier";
 import { defineConfig } from "eslint/config";
 
 export default defineConfig([
   eslintJs.configs.recommended,
   {
+    name: "javascript-rules",
     files: ["**/*.{js,mjs,cjs,ts}"],
     plugins: {
       perfectionist,
