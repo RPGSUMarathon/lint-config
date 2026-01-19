@@ -6,7 +6,8 @@
     "configs"
   ],
   "exports": {
-    "./prettier": "./configs/prettier.js"
+    "./prettier": "./configs/prettier.js",
+    "./javascript": "./configs/javascript.js"
   },
   "keywords": [
     "rpgsu",
@@ -25,12 +26,15 @@
     "prettier": "3.8.0"
   },
   "dependencies": {
+    "@eslint/js": "^9.39.2",
     "@stylistic/eslint-plugin": "^5.7.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-astro": "^1.5.0",
+    "eslint-plugin-perfectionist": "^5.3.1",
     "eslint-plugin-prettier": "^5.5.5",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^7.0.1",
+    "globals": "^17.0.0",
     "prettier-plugin-astro": "^0.14.1",
     "typescript-eslint": "^8.53.0"
   }
