@@ -22,10 +22,11 @@ export default defineConfig([
     ],
   },
   {
-    files: ["**/**/*.{ts}"],
+    files: ["**/**/*.{ts,tsx}"],
     languageOptions: {
       parser: tseslint.parser,
       parserOptions: {
+        ecmaFeatures: { jsx: true },
         project: ["tsconfig.json"],
         ecmaVersion: 2022,
         sourceType: "module",
