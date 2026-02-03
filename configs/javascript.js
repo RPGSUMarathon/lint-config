@@ -3,6 +3,7 @@ import prettierConfig from "eslint-config-prettier";
 import perfectionist from "eslint-plugin-perfectionist";
 import prettier from "eslint-plugin-prettier";
 import { defineConfig } from "eslint/config";
+import globals from "globals";
 
 export default defineConfig([
   eslintJs.configs.recommended,
@@ -12,6 +13,12 @@ export default defineConfig([
     plugins: {
       perfectionist,
       prettier,
+    },
+    languageOptions: {
+      globals: {
+        ...globals.node,
+        ...globals.es2021,
+      },
     },
     rules: {
       // eslint
