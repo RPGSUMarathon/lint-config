@@ -6,6 +6,17 @@ import { defineConfig } from "eslint/config";
 import globals from "globals";
 
 export default defineConfig([
+  {
+    ignores: [
+      "node_modules",
+      ".gitignore",
+      "dist",
+      "build",
+      "coverage",
+      ".next",
+      "*.min.js",
+    ],
+  },
   eslintJs.configs.recommended,
   {
     name: "javascript-rules",
