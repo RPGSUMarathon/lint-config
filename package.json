@@ -8,7 +8,8 @@
   "exports": {
     "./prettier": "./configs/prettier.js",
     "./javascript": "./configs/javascript.js",
-    "./typescript": "./configs/typescript.js"
+    "./typescript": "./configs/typescript.js",
+    "./react": "./configs/react.js"
   },
   "keywords": [
     "rpgsu",
