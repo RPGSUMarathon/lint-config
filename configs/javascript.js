@@ -8,7 +8,7 @@ export default defineConfig([
   eslintJs.configs.recommended,
   {
     name: "javascript-rules",
-    files: ["**/*.{js,mjs,cjs,ts}"],
+    files: ["**/*.{js,mjs,cjs}"],
     plugins: {
       perfectionist,
       prettier,
