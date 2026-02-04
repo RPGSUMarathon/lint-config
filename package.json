@@ -10,7 +10,8 @@
     "./javascript": "./configs/javascript.js",
     "./typescript": "./configs/typescript.js",
     "./react": "./configs/react.js",
-    "./astro": "./configs/astro.js"
+    "./astro": "./configs/astro.js",
+    "./nodecg": "./configs/nodecg.js"
   },
   "keywords": [
     "rpgsu",
