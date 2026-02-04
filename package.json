@@ -9,7 +9,8 @@
     "./prettier": "./configs/prettier.js",
     "./javascript": "./configs/javascript.js",
     "./typescript": "./configs/typescript.js",
-    "./react": "./configs/react.js"
+    "./react": "./configs/react.js",
+    "./astro": "./configs/astro.js"
   },
   "keywords": [
     "rpgsu",
