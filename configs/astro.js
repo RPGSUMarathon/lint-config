@@ -324,13 +324,6 @@ export default defineConfig([
       "@typescript-eslint/no-require-imports": "off",
     },
   },
-  {
-    name: "astro-rules",
-    files: ["**/*.astro"],
-    plugins: {
-      astro,
-    },
-    ...astro.configs.flat.recommended,
-  },
+  ...astro.configs.recommended,
   prettierConfig,
 ]);
