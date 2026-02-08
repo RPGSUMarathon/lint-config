@@ -14,9 +14,6 @@ importers:
       '@stylistic/eslint-plugin':
         specifier: ~5.7.1
         version: 5.7.1(eslint@9.39.2)
-      eslint:
-        specifier: ~9.39.2
-        version: 9.39.2
       eslint-config-prettier:
         specifier: ~10.1.8
         version: 10.1.8(eslint@9.39.2)
@@ -38,15 +35,19 @@ importers:
       globals:
         specifier: ~17.3.0
         version: 17.3.0
-      prettier:
-        specifier: ~3.8.1
-        version: 3.8.1
       prettier-plugin-astro:
         specifier: ~0.14.1
         version: 0.14.1
       typescript-eslint:
         specifier: ~8.54.0
         version: 8.54.0(eslint@9.39.2)(typescript@5.9.3)
+    devDependencies:
+      eslint:
+        specifier: ~9.39.2
+        version: 9.39.2
+      prettier:
+        specifier: ~3.8.1
+        version: 3.8.1
 
 packages:
 
