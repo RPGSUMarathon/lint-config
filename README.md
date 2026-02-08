@@ -17,6 +17,13 @@ This package exports the following ESLint configs:
 
 There's also a Prettier config exported under `prettier` that adds the prettier-plugin-astro plugin.
 
+To use the Prettier config, create the file `.prettierrc.js` and add this snippet there:
+```js
+import prettierConfig from "@rpgsu/lint-config/prettier";
+
+export default prettierConfig;
+```
+
 ## Note for using with pnpm
 For using this package with pnpm, you need to create a file called `.npmrc` in the project root and add the following text into it:
 ```
