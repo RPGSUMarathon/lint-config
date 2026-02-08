@@ -186,6 +186,7 @@ export default defineConfig([
       "prettier/prettier": "error",
     },
   },
+  ...tseslint.configs.recommended,
   // TypeScript rules for extension
   {
     name: "typescript-rules-extension",
@@ -193,14 +194,6 @@ export default defineConfig([
     plugins: {
       "@typescript-eslint": tseslint.plugin,
     },
-    settings: {
-      "import/resolver": {
-        typescript: {
-          project: "tsconfig.extension.json",
-        },
-      },
-    },
-    extends: [tseslint.configs.recommended],
     rules: {
       "dot-notation": "off",
       "@typescript-eslint/dot-notation": "error",
@@ -355,14 +348,6 @@ export default defineConfig([
     plugins: {
       "@typescript-eslint": tseslint.plugin,
     },
-    settings: {
-      "import/resolver": {
-        typescript: {
-          project: "tsconfig.browser.json",
-        },
-      },
-    },
-    extends: [tseslint.configs.recommended],
     rules: {
       "@typescript-eslint/prefer-nullish-coalescing": [
         "warn",

@@ -29,7 +29,7 @@ export default defineConfig([
     ],
   },
   {
-    files: ["**/**/*.{ts,tsx}"],
+    files: ["**/*.{ts,tsx}"],
     languageOptions: {
       parser: tseslint.parser,
       parserOptions: {
@@ -112,18 +112,13 @@ export default defineConfig([
       "prettier/prettier": "error",
     },
   },
+  ...tseslint.configs.recommended,
   {
     name: "typescript-rules",
-    files: ["**/**/.ts"],
+    files: ["**/*.ts"],
     plugins: {
       "@typescript-eslint": tseslint.plugin,
     },
-    settings: {
-      "import/resolver": {
-        typescript: {},
-      },
-    },
-    extends: [tseslint.configs.recommended],
     rules: {
       "dot-notation": "off",
       "@typescript-eslint/dot-notation": "error",
@@ -172,7 +167,7 @@ export default defineConfig([
   },
   {
     name: "react-rules",
-    files: ["**/**/*.{jsx,tsx}"],
+    files: ["**/*.{jsx,tsx}"],
     extends: [
       react.configs.flat.recommended,
       react.configs.flat["jsx-runtime"],
@@ -281,16 +276,10 @@ export default defineConfig([
   },
   {
     name: "react-rules-typescript",
-    files: ["**/**/*.tsx"],
+    files: ["**/*.tsx"],
     plugins: {
       "@typescript-eslint": tseslint.plugin,
     },
-    settings: {
-      "import/resolver": {
-        typescript: {},
-      },
-    },
-    extends: [tseslint.configs.recommended],
     rules: {
       "@typescript-eslint/prefer-nullish-coalescing": [
         "warn",
@@ -337,7 +326,7 @@ export default defineConfig([
   },
   {
     name: "astro-rules",
-    files: ["**/**/*.astro"],
+    files: ["**/*.astro"],
     plugins: {
       astro,
     },
