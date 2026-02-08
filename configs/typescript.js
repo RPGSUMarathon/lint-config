@@ -24,6 +24,7 @@ export default defineConfig([
       parser: tseslint.parser,
       parserOptions: {
         project: ["tsconfig.json"],
+        tsconfigRootDir: process.cwd(),
         ecmaVersion: 2022,
         sourceType: "module",
       },

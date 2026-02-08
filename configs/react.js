@@ -34,6 +34,7 @@ export default defineConfig([
       parserOptions: {
         ecmaFeatures: { jsx: true },
         project: ["tsconfig.json"],
+        tsconfigRootDir: process.cwd(),
         ecmaVersion: 2022,
         sourceType: "module",
       },
@@ -165,12 +166,16 @@ export default defineConfig([
     },
   },
   {
+    ...react.configs.flat.recommended,
+    files: ["**/*.{jsx,tsx}"],
+  },
+  {
+    ...react.configs.flat["jsx-runtime"],
+    files: ["**/*.{jsx,tsx}"],
+  },
+  {
     name: "react-rules",
     files: ["**/*.{jsx,tsx}"],
-    extends: [
-      react.configs.flat.recommended,
-      react.configs.flat["jsx-runtime"],
-    ],
     plugins: {
       react,
       "react-hooks": reactHooks,
