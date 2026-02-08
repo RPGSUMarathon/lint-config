@@ -1,0 +1,30 @@
+name: Check Config Correctness
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  check-config:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: Enable corepack
+        run: |
+          corepack enable
+          corepack prepare --activate
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: "pnpm"
+      - name: Install Dependencies
+        run: pnpm install --frozen-lockfile
+      - name: Check config
+        run: |
+          pnpm install
+          pnpm lint:config 

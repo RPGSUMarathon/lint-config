@@ -1,0 +1,47 @@
+{
+  "name": "@rpgsu/lint-config",
+  "version": "1.0.0",
+  "description": "Lint configs for RPGSU's projects",
+  "type": "module",
+  "files": [
+    "configs"
+  ],
+  "exports": {
+    "./prettier": "./configs/prettier.js",
+    "./javascript": "./configs/javascript.js",
+    "./typescript": "./configs/typescript.js",
+    "./react": "./configs/react.js",
+    "./astro": "./configs/astro.js",
+    "./nodecg": "./configs/nodecg.js"
+  },
+  "scripts": {
+    "lint:config": "pnpm exec eslint --config configs/javascript.js --print-config configs/javascript.js > /dev/null && pnpm exec eslint --config configs/typescript.js --print-config configs/typescript.js > /dev/null && pnpm exec eslint --config configs/react.js --print-config configs/react.js > /dev/null && pnpm exec eslint --config configs/astro.js --print-config configs/astro.js > /dev/null && pnpm exec eslint --config configs/nodecg.js --print-config configs/nodecg.js > /dev/null"
+  },
+  "keywords": [
+    "rpgsu",
+    "lint",
+    "lint-config",
+    "config"
+  ],
+  "author": "RPGSUMarathon",
+  "contributors": [
+    "hoXyy"
+  ],
+  "license": "MIT",
+  "packageManager": "pnpm@10.28.0",
+  "dependencies": {
+    "eslint": "~9.39.2",
+    "prettier": "~3.8.1",
+    "@eslint/js": "~9.39.2",
+    "@stylistic/eslint-plugin": "~5.7.1",
+    "eslint-config-prettier": "~10.1.8",
+    "eslint-plugin-astro": "~1.5.0",
+    "eslint-plugin-perfectionist": "~5.4.0",
+    "eslint-plugin-prettier": "~5.5.5",
+    "eslint-plugin-react": "~7.37.5",
+    "eslint-plugin-react-hooks": "~7.0.1",
+    "globals": "~17.3.0",
+    "prettier-plugin-astro": "~0.14.1",
+    "typescript-eslint": "~8.54.0"
+  }
+}
