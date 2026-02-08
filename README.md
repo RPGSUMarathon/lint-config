@@ -17,7 +17,14 @@ This package exports the following ESLint configs:
 
 There's also a Prettier config exported under `prettier` that adds the prettier-plugin-astro plugin.
 
-### Example usage
+## Note for using with pnpm
+For using this package with pnpm, you need to create a file called `.npmrc` in the project root and add the following text into it:
+```
+public-hoist-pattern[]=*eslint*
+public-hoist-pattern[]=*prettier*
+```
+
+## Example usage
 ```js
 import tsConfig from '@rpgsu/lint-config/typescript'
 
