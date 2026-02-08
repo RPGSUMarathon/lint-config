@@ -170,6 +170,9 @@ export default defineConfig([
   {
     name: "astro-typescript-parser",
     files: ["**/*.astro"],
+    plugins: {
+      prettier,
+    },
     languageOptions: {
       parser: astro.parser,
       parserOptions: {
@@ -181,6 +184,10 @@ export default defineConfig([
         ecmaVersion: 2022,
         sourceType: "module",
       },
+    },
+    rules: {
+      // prettier
+      "prettier/prettier": "error",
     },
   },
   {
