@@ -63,7 +63,13 @@ export default defineConfig([
       },
     },
   },
-  eslintJs.configs.recommended,
+  {
+    ...eslintJs.configs.recommended,
+    files: [
+      "src/extension/**/*.{js,mjs,cjs,ts}",
+      "src/browser/**/*.{js,mjs,cjs,ts,tsx,jsx}",
+    ],
+  },
   // JavaScript rules for extension
   {
     name: "javascript-rules-extension",
@@ -186,7 +192,10 @@ export default defineConfig([
       "prettier/prettier": "error",
     },
   },
-  ...tseslint.configs.recommended,
+  ...tseslint.configs.recommended.map((config) => ({
+    ...config,
+    files: ["src/extension/**/*.ts", "src/browser/**/*.{ts,tsx}"],
+  })),
   // TypeScript rules for extension
   {
     name: "typescript-rules-extension",
@@ -240,14 +249,18 @@ export default defineConfig([
       "@typescript-eslint/no-require-imports": "error",
     },
   },
+  {
+    ...react.configs.flat.recommended,
+    files: ["src/browser/**/*.{jsx,tsx}"],
+  },
+  {
+    ...react.configs.flat["jsx-runtime"],
+    files: ["src/browser/**/*.{jsx,tsx}"],
+  },
   // React rules for browser
   {
     name: "react-rules-browser",
     files: ["src/browser/**/*.{jsx,tsx}"],
-    extends: [
-      react.configs.flat.recommended,
-      react.configs.flat["jsx-runtime"],
-    ],
     plugins: {
       react,
       "react-hooks": reactHooks,
