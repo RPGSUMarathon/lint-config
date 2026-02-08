@@ -35,6 +35,7 @@ export default defineConfig([
       parserOptions: {
         ecmaFeatures: { jsx: true },
         project: ["tsconfig.json"],
+        tsconfigRootDir: process.cwd(),
         ecmaVersion: 2022,
         sourceType: "module",
       },
@@ -163,6 +164,36 @@ export default defineConfig([
       "@typescript-eslint/no-useless-constructor": "error",
       "@typescript-eslint/no-use-before-define": "error",
       "@typescript-eslint/no-require-imports": "error",
+    },
+  },
+  ...astro.configs.recommended,
+  {
+    name: "astro-typescript-parser",
+    files: ["**/*.astro"],
+    languageOptions: {
+      parser: astro.parser,
+      parserOptions: {
+        parser: tseslint.parser,
+        extraFileExtensions: [".astro"],
+        ecmaFeatures: { jsx: true },
+        project: ["tsconfig.json"],
+        tsconfigRootDir: process.cwd(),
+        ecmaVersion: 2022,
+        sourceType: "module",
+      },
+    },
+  },
+  {
+    name: "astro-virtual-ts",
+    files: ["**/*.astro/*.ts", "**/*.astro/*.tsx"],
+    languageOptions: {
+      parser: tseslint.parser,
+      parserOptions: {
+        project: ["tsconfig.json"],
+        tsconfigRootDir: process.cwd(),
+        ecmaVersion: 2022,
+        sourceType: "module",
+      },
     },
   },
   {
@@ -324,6 +355,5 @@ export default defineConfig([
       "@typescript-eslint/no-require-imports": "off",
     },
   },
-  ...astro.configs.recommended,
   prettierConfig,
 ]);
