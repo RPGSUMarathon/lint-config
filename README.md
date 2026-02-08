@@ -4,7 +4,7 @@ TS/JS/JSX/Astro linting configs for RPGSU's projects
 ## Install
 Run:
 ```sh
-pnpm add -D @rpgsu/lint-config eslint@~9.39.2 prettier@~3.8.1
+pnpm add -D @rpgsu/lint-config
 ```
 
 ### Configs
