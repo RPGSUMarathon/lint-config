@@ -4,10 +4,16 @@ import prettierConfig from "eslint-config-prettier";
 import perfectionist from "eslint-plugin-perfectionist";
 import prettier from "eslint-plugin-prettier";
 import react from "eslint-plugin-react";
-import * as reactHooks from "eslint-plugin-react-hooks";
+import reactHooks from "eslint-plugin-react-hooks";
 import { defineConfig } from "eslint/config";
 import globals from "globals";
 import * as tseslint from "typescript-eslint";
+
+const reactHooksRecommendedRules =
+  reactHooks.configs?.["flat/recommended"]?.rules ??
+  reactHooks.configs?.recommended?.rules ??
+  reactHooks.configs?.["recommended-latest"]?.rules ??
+  {};
 
 export default defineConfig([
   {
@@ -93,12 +99,13 @@ export default defineConfig([
           order: "asc",
           newlinesBetween: 0,
           groups: [
-            ["type-builtin", "builtin"],
-            ["type-external", "external"],
-            ["type-internal", "internal"],
-            ["type-parent", "parent"],
-            ["type-sibling", "sibling"],
-            ["type-index", "index"],
+            "type-import",
+            ["value-builtin", "value-external"],
+            "type-internal",
+            "value-internal",
+            ["type-parent", "type-sibling", "type-index"],
+            ["value-parent", "value-sibling", "value-index"],
+            "ts-equals-import",
             "unknown",
           ],
         },
@@ -151,15 +158,15 @@ export default defineConfig([
         {
           type: "natural",
           order: "asc",
-          newlinesBetween: "never",
+          newlinesBetween: 0,
           groups: [
-            ["builtin-type", "builtin"],
-            ["external-type", "external"],
-            ["internal-type", "internal"],
-            ["parent-type", "parent"],
-            ["sibling-type", "sibling"],
-            ["index-type", "index"],
-            "object",
+            "type-import",
+            ["value-builtin", "value-external"],
+            "type-internal",
+            "value-internal",
+            ["type-parent", "type-sibling", "type-index"],
+            ["value-parent", "value-sibling", "value-index"],
+            "ts-equals-import",
             "unknown",
           ],
         },
@@ -247,10 +254,10 @@ export default defineConfig([
     extends: [
       react.configs.flat.recommended,
       react.configs.flat["jsx-runtime"],
-      reactHooks.configs["recommended-latest"],
     ],
     plugins: {
       react,
+      "react-hooks": reactHooks,
       perfectionist,
       prettier,
       "@stylistic": stylistic,
@@ -267,6 +274,7 @@ export default defineConfig([
       },
     },
     rules: {
+      ...reactHooksRecommendedRules,
       "no-duplicate-imports": "error",
       "no-use-before-define": "off",
       "default-case": "error",
@@ -284,15 +292,15 @@ export default defineConfig([
         {
           type: "natural",
           order: "asc",
-          newlinesBetween: "never",
+          newlinesBetween: 0,
           groups: [
-            ["builtin-type", "builtin"],
-            ["external-type", "external"],
-            ["internal-type", "internal"],
-            ["parent-type", "parent"],
-            ["sibling-type", "sibling"],
-            ["index-type", "index"],
-            "object",
+            "type-import",
+            ["value-builtin", "value-external"],
+            "type-internal",
+            "value-internal",
+            ["type-parent", "type-sibling", "type-index"],
+            ["value-parent", "value-sibling", "value-index"],
+            "ts-equals-import",
             "unknown",
           ],
         },
