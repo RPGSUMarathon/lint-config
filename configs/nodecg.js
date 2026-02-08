@@ -42,6 +42,7 @@ export default defineConfig([
       globals: {
         ...globals.node,
         ...globals.es2021,
+        NodeJS: "readonly",
       },
     },
   },
@@ -60,6 +61,10 @@ export default defineConfig([
       globals: {
         ...globals.browser,
         ...globals.es2021,
+        React: "readonly",
+        JSX: "readonly",
+        NodeCG: "readonly",
+        nodecg: "readonly",
       },
     },
   },
@@ -82,6 +87,7 @@ export default defineConfig([
       globals: {
         ...globals.node,
         ...globals.es2021,
+        NodeJS: "readonly",
       },
     },
     rules: {
@@ -143,6 +149,10 @@ export default defineConfig([
       globals: {
         ...globals.browser,
         ...globals.es2021,
+        React: "readonly",
+        JSX: "readonly",
+        NodeCG: "readonly",
+        nodecg: "readonly",
       },
     },
     rules: {
@@ -277,6 +287,10 @@ export default defineConfig([
       globals: {
         ...globals.browser,
         ...globals.es2021,
+        React: "readonly",
+        JSX: "readonly",
+        NodeCG: "readonly",
+        nodecg: "readonly",
       },
     },
     rules: {
