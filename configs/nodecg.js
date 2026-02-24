@@ -256,7 +256,7 @@ export default defineConfig([
       "@typescript-eslint/no-empty-function": "error",
       "@typescript-eslint/no-useless-constructor": "error",
       "@typescript-eslint/no-use-before-define": "error",
-      "@typescript-eslint/no-require-imports": "error",
+      "@typescript-eslint/no-require-imports": "off",
     },
   },
   {
